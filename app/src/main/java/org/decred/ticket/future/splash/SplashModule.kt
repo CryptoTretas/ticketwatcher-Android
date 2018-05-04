@@ -15,5 +15,4 @@ class SplashModule {
     @Provides
     fun providesSplashPresenter(activity: SplashActivity, userPreference: UserPreference): SplashContract.Presenter = SplashPresenter(activity, userPreference)
 
-
 }

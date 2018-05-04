@@ -3,4 +3,5 @@
     <string name="logo_decred">logo decred</string>
     <string name="wallet_id">Wallet ID</string>
     <string name="register">Register</string>
+    <string name="scanner">Scanner</string>
 </resources>

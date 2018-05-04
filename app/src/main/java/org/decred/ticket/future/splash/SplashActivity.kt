@@ -8,7 +8,7 @@ import org.decred.ticket.future.association.AssociationActivity
 import javax.inject.Inject
 
 
-class SplashActivity: DaggerAppCompatActivity(), SplashContract.View{
+class SplashActivity : DaggerAppCompatActivity(), SplashContract.View {
 
     @Inject
     lateinit var presenter: SplashContract.Presenter
@@ -26,11 +26,17 @@ class SplashActivity: DaggerAppCompatActivity(), SplashContract.View{
 
     override fun isLogged() {
         val intent = Intent(this, AssociationActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
 
     override fun newLogin() {
         val intent = Intent(this, AssociationActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
 

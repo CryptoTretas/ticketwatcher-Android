@@ -1,1 +1,1 @@
-# ticket_dcr
+# Decred Ticket Viewer - Android

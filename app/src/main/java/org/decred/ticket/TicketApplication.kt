@@ -3,6 +3,7 @@ package org.decred.ticket
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import org.decred.ticket.di.ApplicationComponent
+import org.decred.ticket.di.DaggerApplicationComponent
 
 class TicketApplication : DaggerApplication() {
 

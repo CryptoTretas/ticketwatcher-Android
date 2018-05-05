@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
+    <ImageView
         android:id="@+id/progress_bar"
         android:layout_width="56dp"
         android:layout_height="56dp"

@@ -28,8 +28,8 @@ class ExtractRecycleView(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AdapterViewHolder {
-        return AdapterViewHolder(LayoutInflater.from(parent?.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
+        return AdapterViewHolder(LayoutInflater.from(parent.context)
                 .inflate(R.layout.adapter_recycle_view, parent, false))
     }
 

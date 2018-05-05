@@ -1,11 +1,11 @@
 package org.decred.ticket.future.home.fragment.balance
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_extract.view.*
 import org.decred.ticket.R
@@ -24,6 +24,9 @@ class ExtractFragment : DaggerFragment(), ExtractContract.View {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         fragmentView = inflater.inflate(R.layout.fragment_extract, container, false)
         fragmentView.extract_list.layoutManager = LinearLayoutManager(activity)
+        Glide.with(activity!!.applicationContext)
+                .load(R.mipmap.stakey)
+                .into(fragmentView.progress_bar);
         presenter.onStart()
         return fragmentView
     }
@@ -38,7 +41,7 @@ class ExtractFragment : DaggerFragment(), ExtractContract.View {
         fragmentView.error_text.visibility = View.GONE
         fragmentView.extract_list.visibility = View.VISIBLE
 
-        fragmentView.extract_list.adapter = ExtractRecycleView(activity, ticketsList)
+        fragmentView.extract_list.adapter = ExtractRecycleView(activity!!, ticketsList)
         fragmentView.extract_list.adapter.notifyDataSetChanged()
     }
 

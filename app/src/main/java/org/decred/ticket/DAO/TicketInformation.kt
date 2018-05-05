@@ -22,7 +22,6 @@ class TicketInformation(
 
     fun onStart() {
         //TODO : Remove this url
-        userPreference.saveWalletId("DsT1mCSfjHTpao82FTvwwAdbAJDxELsNEqb")
         api.getTicketResult(userPreference.getWalletId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

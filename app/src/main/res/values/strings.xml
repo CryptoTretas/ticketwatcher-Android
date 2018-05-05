@@ -13,4 +13,10 @@
     <string name="amount_in_live">Amount in Live</string>
     <string name="total_fee_spend">Total Fee Spend</string>
     <string name="total_reward">Total Reward</string>
+    <string name="avg_days_to_voted">Avg Days to Voted</string>
+    <string name="credit"><![CDATA[Made in Hell de Janeiro with <3]]></string>
+    <string name="wallet">DseKigRxrH8cFb2DKWXBwQfCJysbPgWTPUu</string>
+    <string name="donate">Donate</string>
+    <string name="change_address">Change Address</string>
+    <string name="d_oh_nit_s_not_my_address">D`oh!\nIt`s not my address</string>
 </resources>

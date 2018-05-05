@@ -24,7 +24,7 @@ class ExtractRecycleView(
             entity.txid.text = ticket.buytxid
             entity.price.text = "DCR " + ticket.ticketprice
             entity.status.text = ticket.status
-            entity.date.text = Date(ticket.buytime.toLong()).toString()
+            entity.date.text = Date(ticket.buytime.toLong()*1000).toString()
         }
     }
 

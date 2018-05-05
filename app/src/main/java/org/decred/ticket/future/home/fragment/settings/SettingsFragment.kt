@@ -12,12 +12,9 @@ class SettingsFragment : DaggerFragment(), SettingsContract.View {
     private lateinit var fragmentView: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fragmentView = inflater.inflate(R.layout.activity_home, container, false)
+        fragmentView = inflater.inflate(R.layout.fragment_settings, container, false)
 
         return fragmentView
     }
-
-
-
 
 }

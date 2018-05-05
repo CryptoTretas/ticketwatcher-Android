@@ -6,6 +6,7 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import org.decred.ticket.TicketApplication
+import org.decred.ticket.util.DeliveryModule
 import javax.inject.Singleton
 
 @Singleton
@@ -14,6 +15,7 @@ import javax.inject.Singleton
         ApplicationModule::class,
         NetworkModule::class,
         InfraModule::class,
+        DeliveryModule::class,
         ActivityBuilderModule::class))
 interface ApplicationComponent : AndroidInjector<TicketApplication> {
 

@@ -3,27 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.decred.ticket">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:hardwareAccelerated="true"
+        android:name=".TicketApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".TicketApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".future.splash.SplashActivity">
+
+        </activity>
+
+        <activity android:name=".future.association.AssociationActivity" />
+        <activity android:name=".future.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
-        <activity android:name=".future.association.AssociationActivity"/>
-        <activity android:name=".future.home.HomeActivity"/>
+        </activity>
 
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

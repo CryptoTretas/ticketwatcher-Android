@@ -5,5 +5,5 @@ import org.decred.ticket.future.home.HomeContract
 import javax.inject.Inject
 
 class BalancePresenter @Inject constructor(
-        private val view: HomeContract.View,
-        private val userPreference: UserPreference) : HomeContract.Presenter
+        private val view: BalanceContract.View,
+        private val userPreference: UserPreference) : BalanceContract.Presenter

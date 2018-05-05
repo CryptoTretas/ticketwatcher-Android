@@ -6,21 +6,21 @@
         android:id="@+id/menu_extract"
         android:enabled="true"
         android:icon="@drawable/ic_extract"
-        android:title="Extract"
+        android:title="@string/extract"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_balance"
-        android:icon="@drawable/ic_money"
         android:enabled="true"
-        android:title="Balance"
+        android:icon="@drawable/ic_money"
+        android:title="@string/balance"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_settings"
         android:enabled="true"
         android:icon="@drawable/ic_settings"
-        android:title="Settings"
+        android:title="@string/settings"
         app:showAsAction="ifRoom" />
 
 </menu>

@@ -14,7 +14,7 @@ class NetworkModule {
 
     @Provides
     fun provideRetrofit() = buildRetrofit()
-            .baseUrl("https://dcrdata.decredbrasil.com")
+            .baseUrl("https://dcrdata.decredbrasil.com/api/")
             .build()
 
 

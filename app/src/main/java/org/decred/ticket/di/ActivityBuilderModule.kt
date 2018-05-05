@@ -20,7 +20,7 @@ abstract class ActivityBuilderModule {
     internal abstract fun AssociationActivity(): AssociationActivity
 
 
-    @ContributesAndroidInjector(modules = arrayOf(HomeModule::class))
+    @ContributesAndroidInjector(modules = arrayOf(HomeModule::class, FragmentBuilderModule::class))
     internal abstract fun HomeActivity(): HomeActivity
 
 }

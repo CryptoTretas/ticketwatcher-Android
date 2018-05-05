@@ -4,7 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
+import io.reactivex.subjects.PublishSubject
+import org.decred.ticket.DAO.TicketInformation
 import org.decred.ticket.DAO.UserPreference
+import org.decred.ticket.data.Api
+import org.decred.ticket.util.DeliveryTicket
 import javax.inject.Singleton
 
 @Module
@@ -18,4 +22,7 @@ class InfraModule {
 
     @Provides
     fun providesUserPreference(prefs: SharedPreferences): UserPreference = UserPreference(prefs)
+
+    @Provides
+    fun providesTicketInformation(api: Api, userPreference: UserPreference, publishSubject: PublishSubject<DeliveryTicket>): TicketInformation = TicketInformation(api, userPreference, publishSubject)
 }

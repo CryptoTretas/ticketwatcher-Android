@@ -51,8 +51,11 @@ class TicketInformation(
                 .map { ticket -> ticket.totalinvestment }
                 .reduce { acc, d -> acc + d }
 
-        tickets.filter { ticket -> ticket.status == "voted" }.map { ticket -> ticket.daysToVoted = TimeUnit.SECONDS.toDays(ticket.returntime.toLong() - ticket.buytime.toLong()).toInt() }
-        tickets.filter { ticket -> ticket.status == "live" }.map { ticket -> ticket.daysInStake = TimeUnit.SECONDS.toDays(System.currentTimeMillis() / 1000 - ticket.buytime.toLong()).toInt() }
+        tickets.filter { ticket -> ticket.status == "voted" }
+                .map { ticket -> ticket.daysToVoted = TimeUnit.SECONDS.toDays(ticket.returntime.toLong() - ticket.buytime.toLong()).toInt() }
+
+        tickets.filter { ticket -> ticket.status == "live" }
+                .map { ticket -> ticket.daysInStake = TimeUnit.SECONDS.toDays(System.currentTimeMillis() / 1000 - ticket.buytime.toLong()).toInt() }
 
         val avgToVoted = tickets.filter { ticket -> ticket.status == "voted" }
                 .map { ticket -> ticket.daysToVoted }

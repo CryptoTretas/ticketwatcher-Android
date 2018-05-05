@@ -2,6 +2,6 @@
     <string name="app_name">Ticket</string>
     <string name="logo_decred">logo decred</string>
     <string name="wallet_id">Wallet ID</string>
-    <string name="register">Register</string>
+    <string name="register">Welcome!\nAfter this step you can will follow your tickets!</string>
     <string name="scanner">Scanner</string>
 </resources>

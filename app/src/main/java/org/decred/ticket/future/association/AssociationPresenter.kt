@@ -8,6 +8,10 @@ class AssociationPresenter @Inject constructor(
         private val view: AssociationContract.View,
         private val userPreference: UserPreference
 ) : AssociationContract.Presenter {
+    override fun saveWalletIdPreference(walletId: String) {
+        userPreference.saveWalletId(walletId)
+        view.saveWalletIdSucess()
+    }
 
     override fun onStart(){
 

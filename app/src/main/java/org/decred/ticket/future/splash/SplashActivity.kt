@@ -5,6 +5,7 @@ import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
 import org.decred.ticket.R
 import org.decred.ticket.future.association.AssociationActivity
+import org.decred.ticket.future.home.HomeActivity.Companion.getCallingIntent
 import javax.inject.Inject
 
 
@@ -25,7 +26,7 @@ class SplashActivity : DaggerAppCompatActivity(), SplashContract.View {
 
 
     override fun isLogged() {
-        val intent = Intent(this, AssociationActivity::class.java)
+        val intent = getCallingIntent(this)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

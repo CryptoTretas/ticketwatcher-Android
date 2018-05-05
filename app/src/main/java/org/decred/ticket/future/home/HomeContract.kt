@@ -2,5 +2,7 @@ package org.decred.ticket.future.home
 
 interface HomeContract{
     interface View
-    interface Presenter
+    interface Presenter {
+        fun onStart()
+    }
 }

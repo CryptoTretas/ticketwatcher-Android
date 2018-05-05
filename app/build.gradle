@@ -55,6 +55,8 @@ dependencies {
     testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
     testImplementation 'junit:junit:4.12'
 
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     implementation'com.jakewharton.timber:timber:4.7.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'

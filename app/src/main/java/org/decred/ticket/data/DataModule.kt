@@ -3,8 +3,10 @@ package org.decred.ticket.data
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
+import javax.inject.Singleton
 
 
+@Singleton
 @Module
 class DataModule {
 

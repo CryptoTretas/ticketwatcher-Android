@@ -10,12 +10,17 @@ import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import org.decred.ticket.R
 import org.decred.ticket.future.home.fragment.BottomBarPagerAdapter
+import javax.inject.Inject
 
 class HomeActivity : DaggerAppCompatActivity(), HomeContract.View {
+
+    @Inject
+    lateinit var presenter: HomeContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        presenter.onStart()
         setBottomBarNavigation()
         setPager()
     }

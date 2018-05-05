@@ -12,5 +12,7 @@ data class Ticket(
         val returntime: Int,
         val reward: Double,
         val feestakepool: Double,
-        val returntotal: Double
+        val returntotal: Double,
+        var daysToVoted: Int,
+        var daysInStake: Int
 )

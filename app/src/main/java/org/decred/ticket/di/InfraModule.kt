@@ -24,5 +24,6 @@ class InfraModule {
     fun providesUserPreference(prefs: SharedPreferences): UserPreference = UserPreference(prefs)
 
     @Provides
+    @Singleton
     fun providesTicketInformation(api: Api, userPreference: UserPreference, publishSubject: PublishSubject<DeliveryTicket>): TicketInformation = TicketInformation(api, userPreference, publishSubject)
 }

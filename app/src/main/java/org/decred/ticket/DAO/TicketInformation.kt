@@ -9,15 +9,16 @@ import org.decred.ticket.util.DeliveryTicket
 import org.decred.ticket.util.StatusApplication
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
-
+@Singleton
 class TicketInformation(
         val api: Api,
         val userPreference: UserPreference,
         val publishedSubjectTicket: PublishSubject<DeliveryTicket>) {
 
 
-    lateinit var ticketReoganize: TicketReorganize
+    var ticketReoganize: TicketReorganize? = null
 
     fun onStart() {
         //TODO : Remove this url
@@ -79,6 +80,6 @@ data class TicketReorganize(
         val totalTicketsVoted: Int,
         val totalTicketsLived: Int,
         val amountInLive: Double,
-        val avgToLVoted: Int,
+        val avgToVoted: Int,
         val totalReward: Double,
         val totalFee: Double)

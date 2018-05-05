@@ -1,22 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/error_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/balance"
+        android:text="= (\n\nSorry, but error has happened"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reward_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total Reward"
+        app:layout_constraintEnd_toEndOf="@+id/reward"
+        app:layout_constraintStart_toStartOf="@+id/reward"
+        app:layout_constraintTop_toBottomOf="@+id/reward" />
+
+    <TextView
+        android:id="@+id/reward"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="9999.0000"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lived" />
+
+    <TextView
+        android:id="@+id/lived_ticket_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Lived Ticket"
+        app:layout_constraintEnd_toEndOf="@+id/total_fee_spend"
+        app:layout_constraintStart_toStartOf="@+id/total_fee_spend"
+        app:layout_constraintTop_toBottomOf="@+id/lived" />
+
+    <TextView
+        android:id="@+id/lived"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="9999"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/lived_ticket_text"
+        app:layout_constraintStart_toStartOf="@+id/lived_ticket_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/total_ticket_voted"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="9999"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/lived_ticket_text"
+        app:layout_constraintStart_toStartOf="@+id/lived_ticket_text"
+        app:layout_constraintTop_toBottomOf="@+id/lived_ticket_text" />
+
+    <TextView
+        android:id="@+id/total_ticket_voted_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total Voted"
+        app:layout_constraintEnd_toEndOf="@+id/total_ticket_voted"
+        app:layout_constraintStart_toStartOf="@+id/total_ticket_voted"
+        app:layout_constraintTop_toBottomOf="@+id/total_ticket_voted" />
+
+    <TextView
+        android:id="@+id/amount_live"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9999.0000"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total_ticket_voted"
+        app:layout_constraintEnd_toEndOf="@+id/reward_text"
+        app:layout_constraintStart_toStartOf="@+id/reward_text"
+        app:layout_constraintTop_toTopOf="@+id/total_ticket_voted" />
+
+    <TextView
+        android:id="@+id/amount_live_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Amount in Live"
+        app:layout_constraintEnd_toEndOf="@+id/amount_live"
+        app:layout_constraintStart_toStartOf="@+id/amount_live"
+        app:layout_constraintTop_toBottomOf="@+id/amount_live" />
+
+    <TextView
+        android:id="@+id/avg_days"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="365"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/amount_live"
+        app:layout_constraintStart_toStartOf="@+id/amount_live"
+        app:layout_constraintTop_toBottomOf="@+id/amount_live_text" />
+
+    <TextView
+        android:id="@+id/avg_days_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Avg Days to Voted"
+        app:layout_constraintEnd_toEndOf="@+id/avg_days"
+        app:layout_constraintStart_toStartOf="@+id/avg_days"
+        app:layout_constraintTop_toBottomOf="@+id/avg_days" />
+
+    <TextView
+        android:id="@+id/total_fee_spend"
+        fontPath="fonts/Inconsolata-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="9999.0000"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_ticket_voted_text"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/total_fee_spend_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Total Fee Spend"
+        app:layout_constraintEnd_toEndOf="@+id/total_fee_spend"
+        app:layout_constraintStart_toStartOf="@+id/total_fee_spend"
+        app:layout_constraintTop_toBottomOf="@+id/total_fee_spend" />
+
+
 </android.support.constraint.ConstraintLayout>

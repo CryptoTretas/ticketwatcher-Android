@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import org.decred.ticket.enum.EnumMenuBottomBar
+import org.decred.ticket.future.home.fragment.balance.BalanceFragment
+import org.decred.ticket.future.home.fragment.balance.ExtractFragment
 import org.decred.ticket.future.home.fragment.settings.SettingsFragment
 
 class BottomBarPagerAdapter(
@@ -13,8 +15,8 @@ class BottomBarPagerAdapter(
 ) : FragmentStatePagerAdapter(fragment) {
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> SettingsFragment()
-            1 -> SettingsFragment()
+            0 -> ExtractFragment()
+            1 -> BalanceFragment()
             else -> SettingsFragment()
         }
     }

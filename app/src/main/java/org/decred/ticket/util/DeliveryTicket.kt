@@ -6,5 +6,6 @@ open class DeliveryTicket(val status: StatusApplication, val tickets: TicketReor
 
 enum class StatusApplication {
     SUCCESS,
-    ERROR
+    RELOAD,
+    ERROR,
 }

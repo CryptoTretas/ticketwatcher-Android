@@ -13,6 +13,6 @@ class HomeModule {
 
 
     @Provides
-    fun providesHomePresenter(activity: HomeActivity, userPreference: UserPreference, ticketInformation: TicketInformation): HomeContract.Presenter = HomePresenter(activity, userPreference, ticketInformation)
+    fun providesHomePresenter(activity: HomeActivity,ticketInformation: TicketInformation): HomeContract.Presenter = HomePresenter(activity, ticketInformation)
 
 }

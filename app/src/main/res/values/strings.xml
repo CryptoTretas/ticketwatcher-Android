@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Ticket</string>
+    <string name="app_name">Ticket Watcher</string>
     <string name="logo_decred">logo decred</string>
     <string name="wallet_id">Wallet ID</string>
-    <string name="register">Welcome!\nAfter this step you can will follow your tickets!</string>
+    <string name="register">Welcome!\nAfter this step you will follow your tickets!</string>
     <string name="scanner">Scanner</string>
     <string name="settings">Settings</string>
     <string name="extract">Extract</string>
     <string name="balance">Balance</string>
-    <string name="error">= (  Sorry, but error has happened</string>
+    <string name="error">= (</string>
     <string name="lived_ticket">Lived Ticket</string>
     <string name="total_voted">Total Voted</string>
     <string name="amount_in_live">Amount in Live</string>

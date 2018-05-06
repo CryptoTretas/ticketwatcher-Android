@@ -7,7 +7,7 @@ class UserPreference constructor(private val preferences: SharedPreferences) {
 
     fun saveWalletId(id: String) {
         preferences.edit()
-                .putString(WALLET_ID, id)
+                .putString(WALLET_ID, id.trim())
                 .apply()
     }
 

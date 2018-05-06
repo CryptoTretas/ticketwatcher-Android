@@ -25,6 +25,11 @@ class HomeActivity : DaggerAppCompatActivity(), HomeContract.View {
         setPager()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
+
     private fun setPager() {
         view_pager.adapter = BottomBarPagerAdapter(this, supportFragmentManager)
         view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {

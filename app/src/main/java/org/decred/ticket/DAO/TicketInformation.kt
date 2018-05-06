@@ -19,7 +19,7 @@ class TicketInformation(
 
 
     var ticketReoganize: TicketReorganize? = null
-
+    var error:Boolean = false
     fun onStart() {
         //TODO : Remove this url
         api.getTicketResult(userPreference.getWalletId())
@@ -30,6 +30,7 @@ class TicketInformation(
     }
 
     private fun success(tickets: List<Ticket>) {
+        error = false
         val totalRewards = tickets
                 .map { ticket -> ticket.reward }
                 .reduce { acc, d -> acc + d }
@@ -68,7 +69,13 @@ class TicketInformation(
 
     private fun error(throwable: Throwable) {
         publishedSubjectTicket.onNext(DeliveryTicket(StatusApplication.ERROR))
+        error = true
         Timber.e(throwable)
+    }
+
+    fun destroy(){
+        ticketReoganize = null
+        error = false
     }
 
 }

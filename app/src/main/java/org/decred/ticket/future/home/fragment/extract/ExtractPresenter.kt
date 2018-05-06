@@ -19,6 +19,8 @@ class ExtractPresenter @Inject constructor(
     override fun onStart() {
         if (ticketInformation.ticketReoganize != null) {
             success(ticketInformation.ticketReoganize)
+        } else if (ticketInformation.error) {
+            view.onError()
         }
         compositeDisposable.add(
                 publishSubject
@@ -35,7 +37,7 @@ class ExtractPresenter @Inject constructor(
                         }, this::error)
         )
     }
-    
+
     override fun onDestroy() {
         compositeDisposable.clear()
     }

@@ -1,9 +1,11 @@
 package org.decred.ticket.DAO
 
+import com.google.firebase.iid.FirebaseInstanceId
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 import org.decred.ticket.data.Api
+import org.decred.ticket.data.LiveTicketsRequest
 import org.decred.ticket.data.Ticket
 import org.decred.ticket.util.DeliveryTicket
 import org.decred.ticket.util.StatusApplication
@@ -19,7 +21,7 @@ class TicketInformation(
 
 
     var ticketReoganize: TicketReorganize? = null
-    var error:Boolean = false
+    var error: Boolean = false
     fun onStart() {
         //TODO : Remove this url
         api.getTicketResult(userPreference.getWalletId())
@@ -52,6 +54,13 @@ class TicketInformation(
                 .map { ticket -> ticket.totalinvestment }
                 .reduce { acc, d -> acc + d }
 
+        val firebaseInstanceId = FirebaseInstanceId.getInstance().token
+        val liveTickets = tickets
+                .filter { firebaseInstanceId != null }
+                .filter { ticket -> ticket.status == "live" }
+                .map { ticket -> LiveTicketsRequest(ticket.buytxid, firebaseInstanceId !!) }
+        saveTicketLive(liveTickets)
+
         tickets.filter { ticket -> ticket.status == "voted" }
                 .map { ticket -> ticket.daysToVoted = TimeUnit.SECONDS.toDays(ticket.returntime.toLong() - ticket.buytime.toLong()).toInt() }
 
@@ -66,6 +75,16 @@ class TicketInformation(
         publishedSubjectTicket.onNext(DeliveryTicket(StatusApplication.SUCCESS, ticketReoganize))
     }
 
+    private fun saveTicketLive(liveTickets: List<LiveTicketsRequest>) {
+        if (liveTickets.isEmpty()) return
+        api.saveTicketedLive(liveTicketsRequest = liveTickets)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ success ->
+                    Timber.i(success.message)
+                }, { throwable -> Timber.e(throwable) }
+                )
+    }
 
     private fun error(throwable: Throwable) {
         publishedSubjectTicket.onNext(DeliveryTicket(StatusApplication.ERROR))
@@ -73,7 +92,7 @@ class TicketInformation(
         Timber.e(throwable)
     }
 
-    fun destroy(){
+    fun destroy() {
         ticketReoganize = null
         error = false
     }

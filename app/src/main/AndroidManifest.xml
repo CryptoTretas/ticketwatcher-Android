@@ -14,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="dbd97504e050322ebbe6c8a9302afa29252c2405" />
         <activity android:name=".future.splash.SplashActivity">
 
             <intent-filter>

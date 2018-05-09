@@ -1,18 +1,22 @@
 package org.decred.ticket
 
-import android.util.Log
-import com.google.firebase.iid.FirebaseInstanceId
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import org.decred.ticket.di.ApplicationComponent
 import org.decred.ticket.di.DaggerApplicationComponent
 import timber.log.Timber
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
+import com.crashlytics.android.Crashlytics
+import io.fabric.sdk.android.Fabric
+
+
+
 
 class TicketApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        Fabric.with(this, Crashlytics())
         Timber.plant(Timber.DebugTree())
         CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/Inconsolata-Regular.ttf")

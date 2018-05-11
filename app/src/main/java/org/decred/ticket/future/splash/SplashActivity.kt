@@ -1,5 +1,6 @@
 package org.decred.ticket.future.splash
 
+import android.app.NotificationManager
 import android.content.Intent
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
@@ -19,8 +20,14 @@ class SplashActivity : DaggerAppCompatActivity(), SplashContract.View {
         setContentView(R.layout.activity_splash)
     }
 
+    private fun clearNotification() {
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.cancelAll()
+    }
+
     override fun onStart() {
         presenter.onStart()
+        clearNotification()
         super.onStart()
     }
 

@@ -38,7 +38,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 .setContentIntent(pendingIntent)
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
         notificationManager.notify(0, notificationBuilder.build())
     }
 }

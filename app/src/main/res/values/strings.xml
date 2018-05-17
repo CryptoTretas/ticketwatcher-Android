@@ -3,7 +3,7 @@
     <string name="logo_decred">logo decred</string>
     <string name="wallet_id">Wallet ID</string>
     <string name="register">Welcome!\nAfter this step you will follow your tickets!</string>
-    <string name="scanner">Scanner</string>
+    <string name="scanner">Scanner Wallet ID</string>
     <string name="settings">Settings</string>
     <string name="extract">Extract</string>
     <string name="balance">Balance</string>

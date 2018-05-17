@@ -24,7 +24,7 @@ class SettingsFragment : DaggerFragment(), SettingsContract.View {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         fragmentView = inflater.inflate(R.layout.fragment_settings, container, false)
         val barcodeEncoder = BarcodeEncoder()
-        val bitmap = barcodeEncoder.encodeBitmap("DseKigRxrH8cFb2DKWXBwQfCJysbPgWTPUu", BarcodeFormat.QR_CODE, 400, 400)
+        val bitmap = barcodeEncoder.encodeBitmap(getString(R.string.wallet), BarcodeFormat.QR_CODE, 400, 400)
         fragmentView.qr_code_donation.setImageBitmap(bitmap)
         listeners()
         return fragmentView

@@ -14,7 +14,7 @@ class SplashPresenter @Inject constructor(
 ) : SplashContract.Presenter {
 
     override fun onStart() {
-        Single.just(userPreference.isLogged()).delay(1500, TimeUnit.MILLISECONDS)
+        Single.just(userPreference.isLogged()).delay(500, TimeUnit.MILLISECONDS)
                 .subscribe { t1: Boolean, _ ->
                     if (t1) view.isLogged()
                     else view.newLogin()

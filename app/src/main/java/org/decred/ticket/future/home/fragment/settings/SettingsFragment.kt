@@ -1,10 +1,15 @@
 package org.decred.ticket.future.home.fragment.settings
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
 import dagger.android.support.DaggerFragment
@@ -41,7 +46,17 @@ class SettingsFragment : DaggerFragment(), SettingsContract.View {
             startActivity(intent)
             activity!!.finish()
         }
+
+        fragmentView.wallet_id.setOnClickListener{
+            clipboardSuccess()
+        }
     }
 
+    private fun clipboardSuccess() {
+        val clipboard = activity!!.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("Donate Wallet", getString(R.string.wallet))
+        clipboard.primaryClip = clip
+        Toast.makeText(activity, "Wallet Id now in your clipboard", Toast.LENGTH_LONG).show()
+    }
 
 }

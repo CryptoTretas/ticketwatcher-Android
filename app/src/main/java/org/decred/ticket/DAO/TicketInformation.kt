@@ -31,8 +31,13 @@ class TicketInformation(
 
     }
 
-    private fun success(tickets: List<Ticket>) {
+    private fun success(tickets : List<Ticket>) {
         error = false
+        if(tickets.isEmpty()) {
+            ticketReoganize = TicketReorganize(tickets, 0, 0, 0.0, 0, 0.0, 0.0)
+            publishedSubjectTicket.onNext(DeliveryTicket(StatusApplication.SUCCESS, ticketReoganize))
+            return
+        }
         val totalRewards = tickets
                 .map { ticket -> ticket.reward }
                 .reduce { acc, d -> acc + d }
@@ -82,8 +87,7 @@ class TicketInformation(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ success ->
                     Timber.i(success.message)
-                }, { throwable -> Timber.e(throwable) }
-                )
+                }, { throwable -> Timber.e(throwable) })
     }
 
     private fun error(throwable: Throwable) {

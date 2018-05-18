@@ -18,8 +18,8 @@ android {
         applicationId "org.decred.ticket"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 5
-        versionName "1.1.2b"
+        versionCode 6
+        versionName "1.1.3b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

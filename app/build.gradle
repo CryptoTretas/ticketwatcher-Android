@@ -18,8 +18,8 @@ android {
         applicationId "org.decred.ticket"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 6
-        versionName "1.1.3b"
+        versionCode 7
+        versionName "1.1.2b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,7 +27,7 @@ android {
             minifyEnabled false
         }
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

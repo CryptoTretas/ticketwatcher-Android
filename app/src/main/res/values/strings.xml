@@ -19,4 +19,5 @@
     <string name="donate">Donate</string>
     <string name="change_address">Change Address</string>
     <string name="d_oh_nit_s_not_my_address">D`oh!\nIt`s not my address</string>
+    <string name="version">V 1.1.2b</string>
 </resources>

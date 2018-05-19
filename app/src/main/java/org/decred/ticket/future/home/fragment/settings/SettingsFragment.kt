@@ -13,7 +13,9 @@ import android.widget.Toast
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_settings.view.*
+import org.decred.ticket.BuildConfig
 import org.decred.ticket.R
 import org.decred.ticket.future.association.AssociationActivity
 import javax.inject.Inject
@@ -32,6 +34,7 @@ class SettingsFragment : DaggerFragment(), SettingsContract.View {
         val bitmap = barcodeEncoder.encodeBitmap(getString(R.string.wallet), BarcodeFormat.QR_CODE, 400, 400)
         fragmentView.qr_code_donation.setImageBitmap(bitmap)
         listeners()
+        fragmentView.version.text = BuildConfig.VERSION_NAME
         return fragmentView
     }
 
@@ -47,7 +50,7 @@ class SettingsFragment : DaggerFragment(), SettingsContract.View {
             activity!!.finish()
         }
 
-        fragmentView.wallet_id.setOnClickListener{
+        fragmentView.wallet_id.setOnClickListener {
             clipboardSuccess()
         }
     }

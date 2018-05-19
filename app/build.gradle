@@ -18,13 +18,14 @@ android {
         applicationId "org.decred.ticket"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 7
-        versionName "1.1.2b"
+        versionCode 8
+        versionName "V 1.1.3b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug{
-            minifyEnabled false
+            versionNameSuffix "-debug"
+            debuggable true
         }
         release {
             minifyEnabled false

@@ -18,8 +18,8 @@ android {
         applicationId "org.decred.ticket"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 8
-        versionName "V 1.1.3b"
+        versionCode 9
+        versionName "V 1.2.0b"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -68,7 +68,7 @@ dependencies {
     testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
     testImplementation 'junit:junit:4.12'
 
-
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.2'
     implementation 'com.google.firebase:firebase-core:15.0.2'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
 
